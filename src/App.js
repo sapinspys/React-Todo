@@ -2,6 +2,7 @@ import React from 'react';
 // import TodoList from './components/TodoComponents/TodoList';
 import TodoForm from './components/TodoComponents/TodoForm';
 
+const storage=[];
 
 class App extends React.Component {
   // you will need a place to store your state in this component.
@@ -10,25 +11,34 @@ class App extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      todoStorage:[]
-    };
-
-    this.handleChange = this.handleChange.bind(this);
-    this.handleSubmit = this.handleSubmit.bind(this);
+      todoStorage: storage,
+      task: '',
+      id: '',
+      completed: false,
+    }
   }
 
-  handleChange(e) {
+  handleSubmit = e => {
+    e.preventDefault();
+    console.log(e.target)
+    const newTask = {
+      task: this.state.task,
+      id: this.state.id,
+      completed: this.state.completed,
+    }
+
+    this.setState({
+      todoStorage: [...this.state.todoStorage, newTask],
+      task: '',
+      id: '',
+      completed: false,
+    })
+  }
+
+  handleChange = e => {
     this.setState({
       todoStorage: [...this.state.todoStorage, e.target.value]
     })
-  }
-
-  handleSubmit(e) {
-    this.setState({
-      todoStorage: [...this.state.todoStorage, e.target.ref]
-    })
-    e.preventDefault();
-    console.log('todoStorage was updated: ' + this.state.todoStorage);
   }
 
   render() {
