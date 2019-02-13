@@ -7,13 +7,14 @@ class App extends React.Component {
   constructor() {
     super();
     this.state = {
-      //STATE HERE
+      todoList:[]
     }
   }
+
   render() {
     return (
       <div>
-        <h2>Welcome to your Todo App!</h2>
+        <h2>React-Todo: MVP</h2>
       </div>
     );
   }
