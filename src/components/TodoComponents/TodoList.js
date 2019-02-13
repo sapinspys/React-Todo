@@ -9,7 +9,6 @@ class TodoList extends React.Component {
         return (
             <div className='todo-list'>
                 <TodoItem todoItem={this.props.todoItem}/>
-                {/* <TodoForm /> */}
             </div>
         )
     }

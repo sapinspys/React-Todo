@@ -1,6 +1,7 @@
 import React from 'react';
 // import TodoList from './components/TodoComponents/TodoList';
 import TodoForm from './components/TodoComponents/TodoForm';
+import TodoItem from './TodoItem';
 
 const storage=[];
 
@@ -20,11 +21,11 @@ class App extends React.Component {
 
   handleSubmit = e => {
     e.preventDefault();
-    console.log(e.target)
+    console.log(e.target);
     const newTask = {
       task: this.state.task,
-      id: this.state.id,
-      completed: this.state.completed,
+      id: Date.now(),
+      completed: false,
     }
 
     this.setState({
@@ -36,8 +37,9 @@ class App extends React.Component {
   }
 
   handleChange = e => {
+    console.log(e.target.value)
     this.setState({
-      todoStorage: [...this.state.todoStorage, e.target.value]
+      [e.target.name]: e.target.value
     })
   }
 
@@ -46,9 +48,12 @@ class App extends React.Component {
       <div>
         <h2>React-Todo: MVP</h2>
         <div className="todo-list">
-          {/* <TodoList /> */}
+          {console.log()}
         </div>
-        <TodoForm onSubmit={this.handleSubmit} onChange={this.handleChange}/>
+        <TodoForm 
+          onSubmit={this.handleSubmit} 
+          task={this.state.task}
+          onChange={this.handleChange}/>
       </div>
     );
   }
