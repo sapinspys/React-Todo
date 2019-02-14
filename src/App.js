@@ -28,7 +28,6 @@ class App extends React.Component {
     this.setState((state) => {
       return({
         todoStorage: [...state.todoStorage, newTask], 
-        // for later: arrow functions, avoid trouble, REACT DOC
         task: '',
         id: '',
         completed: false,
@@ -37,10 +36,27 @@ class App extends React.Component {
   }
 
   handleChange = e => {
-    console.log(e.target.value)
     this.setState({
       task: e.target.value
     })
+  }
+
+  handleToggle = e => {
+    let index = e.target.getAttribute('data-index');
+    let currentFlag = this.state.todoStorage[index].completed;
+    if (currentFlag === false) {
+      this.setState(prevState => {
+        const newItems = [...prevState.todoStorage];
+        newItems[index].completed = true;
+        return {items: newItems};
+      })
+    } else {
+      this.setState(prevState => {
+        const newItems = [...prevState.todoStorage];
+        newItems[index].completed = false;
+        return {items: newItems};
+      })
+    }
   }
 
   render() {
@@ -49,7 +65,7 @@ class App extends React.Component {
         <h2>React-Todo: MVP</h2>
         <div className="todo-list">
           {this.state.todoStorage.map((task, index) => (
-            <TodoItem key={index} taskInfo={task} />
+            <TodoItem key={index} taskInfo={task} toggleCompleted={this.handleToggle} index={index}/>
           ))}
         </div>
         <TodoForm 

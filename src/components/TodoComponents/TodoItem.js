@@ -3,7 +3,9 @@ import './Todo.css';
 
 const TodoItem = props => {
     return <div className="todo-item">
-        {props.taskInfo.task}
+        <p onClick={props.toggleCompleted} data-index={props.index}>
+            {props.taskInfo.task}
+        </p>
     </div>
 }
 
