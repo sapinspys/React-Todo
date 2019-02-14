@@ -1,6 +1,7 @@
 import React from 'react';
 import TodoForm from './components/TodoComponents/TodoForm';
 import TodoItem from './components/TodoComponents/TodoItem';
+import './App.css';
     
 class App extends React.Component {
   constructor(props) {
@@ -67,18 +68,18 @@ class App extends React.Component {
 
   render() {
     return (
-      <div>
+      <div className="todo-container">
         <h2>React-Todo: MVP</h2>
-        <div className="todo-list">
-          {this.state.todoStorage.map((task, index) => (
-            <TodoItem key={index} taskInfo={task} toggleCompleted={this.handleToggle} index={index}/>
-          ))}
-        </div>
         <TodoForm 
           onSubmit={this.handleSubmit} 
           task={this.state.task}
           onChange={this.handleChange}
           clearFunction={this.clearCompleted}/>
+        <div className="todo-list">
+          {this.state.todoStorage.map((task, index) => (
+            <TodoItem key={index} taskInfo={task} toggleCompleted={this.handleToggle} index={index}/>
+          ))}
+        </div>
       </div>
     );
   }
