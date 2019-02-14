@@ -45,12 +45,14 @@ class App extends React.Component {
     let index = e.target.getAttribute('data-index');
     let currentFlag = this.state.todoStorage[index].completed;
     if (currentFlag === false) {
+      e.target.style.textDecoration = 'line-through';
       this.setState(prevState => {
         const newItems = [...prevState.todoStorage];
         newItems[index].completed = true;
         return {items: newItems};
       })
     } else {
+      e.target.style.textDecoration = 'none';
       this.setState(prevState => {
         const newItems = [...prevState.todoStorage];
         newItems[index].completed = false;
