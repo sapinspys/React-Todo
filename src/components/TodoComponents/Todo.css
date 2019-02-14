@@ -7,4 +7,14 @@
     text-decoration: none;
     color:lightgray;
     font-size:.8rem;
+    position: initial;
+}
+
+/* .todo-item {
+} */
+
+.item-container {
+    background:white;
+    border: 1px solid lightgray;
+    width: 354px;
 }

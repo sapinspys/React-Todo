@@ -1,7 +1,12 @@
 .todo-container {
-    border: 1px solid gray;
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
+    width: 500px;
+    margin: 0 auto;
+}
+
+body {
+    background: navajowhite;
 }
