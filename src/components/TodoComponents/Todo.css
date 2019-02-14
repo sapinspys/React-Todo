@@ -10,11 +10,14 @@
     position: initial;
 }
 
-/* .todo-item {
-} */
+.todo-item {
+    padding-left: 20px;
+    color: white;
+}
 
 .item-container {
-    background:white;
+    background:#373D3F;
     border: 1px solid lightgray;
+    border-collapse: separate;
     width: 354px;
 }

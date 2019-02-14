@@ -70,7 +70,7 @@ class App extends React.Component {
 
   clearCompleted = () => {
     Array.from(document.querySelectorAll('.todo-item')).map(item => item.style.textDecoration = 'none');
-    Array.from(document.querySelectorAll('.todo-item')).map(item => item.style.color = 'black');
+    Array.from(document.querySelectorAll('.todo-item')).map(item => item.style.color = 'white');
     this.setState(prevState => {
       const newItems = [...prevState.todoStorage];
       return {todoStorage: newItems.filter(item => item.completed !== true)};
