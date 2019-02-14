@@ -6,7 +6,6 @@ const TodoItem = props => {
         <p className='todo-item' onClick={props.toggleCompleted} data-index={props.index}>
             {props.taskInfo.task}
         </p>
-        <p className="todo-date">{Date(Date.now())}</p>
     </div>
 }
 

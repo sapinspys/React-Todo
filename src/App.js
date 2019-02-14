@@ -38,11 +38,18 @@ class App extends React.Component {
     })
   }
 
-  handleToggle = e => {
+  handleCompletion = e => {
+    console.log(e.target)
     let index = e.target.getAttribute('data-index');
     let currentFlag = this.state.todoStorage[index].completed;
     if (currentFlag === false) {
       e.target.style.textDecoration = 'line-through';
+      e.target.style.color = 'lightgray';
+      let dateCompleted = document.createElement('p');
+      dateCompleted.appendChild(document.createTextNode(`Completed ${Date(Date.now()).slice(0,21)} `));
+      dateCompleted.classList.add(`date-completed`)
+      dateCompleted.classList.add(`completion-${index}`)
+      e.target.appendChild(dateCompleted);
       this.setState(prevState => {
         const newItems = [...prevState.todoStorage];
         newItems[index].completed = true;
@@ -50,6 +57,9 @@ class App extends React.Component {
       })
     } else {
       e.target.style.textDecoration = 'none';
+      e.target.style.color = 'black';
+      let completionDate = document.querySelector(`.completion-${index}`);
+      completionDate.parentNode.removeChild(completionDate);
       this.setState(prevState => {
         const newItems = [...prevState.todoStorage];
         newItems[index].completed = false;
@@ -60,6 +70,7 @@ class App extends React.Component {
 
   clearCompleted = () => {
     Array.from(document.querySelectorAll('.todo-item')).map(item => item.style.textDecoration = 'none');
+    Array.from(document.querySelectorAll('.todo-item')).map(item => item.style.color = 'black');
     this.setState(prevState => {
       const newItems = [...prevState.todoStorage];
       return {todoStorage: newItems.filter(item => item.completed !== true)};
@@ -77,7 +88,10 @@ class App extends React.Component {
           clearFunction={this.clearCompleted}/>
         <div className="todo-list">
           {this.state.todoStorage.map((task, index) => (
-            <TodoItem key={index} taskInfo={task} toggleCompleted={this.handleToggle} index={index}/>
+            <TodoItem key={index}
+            taskInfo={task}
+            toggleCompleted={this.handleCompletion} 
+            index={index}/>
           ))}
         </div>
       </div>
