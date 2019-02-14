@@ -2,9 +2,7 @@ import React from 'react';
 // import TodoList from './components/TodoComponents/TodoList';
 import TodoForm from './components/TodoComponents/TodoForm';
 import TodoItem from './components/TodoComponents/TodoItem';
-
-const storage=[];
-
+    
 class App extends React.Component {
   // you will need a place to store your state in this component.
   // design `App` to be the parent component of your application.
@@ -12,7 +10,7 @@ class App extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      todoStorage: storage,
+      todoStorage: [],
       task: '',
       id: '',
       completed: false,
@@ -27,17 +25,21 @@ class App extends React.Component {
       completed: false,
     }
 
-    this.setState({
-      todoStorage: [...this.state.todoStorage, newTask],
-      task: '',
-      id: '',
-      completed: false,
+    this.setState((state) => {
+      return({
+        todoStorage: [...state.todoStorage, newTask], 
+        // for later: arrow functions, avoid trouble, REACT DOC
+        task: '',
+        id: '',
+        completed: false,
+      })
     })
   }
 
   handleChange = e => {
+    console.log(e.target.value)
     this.setState({
-      [e.target.name]: e.target.value
+      task: e.target.value
     })
   }
 
