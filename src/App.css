@@ -1,3 +1,8 @@
+body {
+    /* background: url(./wood-background.jpeg); */
+    background: #107896;
+}
+
 .todo-container {
     display: flex;
     flex-direction: column;
@@ -5,18 +10,27 @@
     align-items: center;
     width: 500px;
     margin: 0 auto;
+    margin-top: 80px;
 }
 
 .todo-container h2 {
-    background: #373D3F;
+    background: #3C6478;
     border-radius: 10px 10px 0 0;
     margin: 0;
-    padding: 10px 84px;
+    padding: 10px 77px;
     color: white;
     text-shadow: 0 0 5px black;
+    border: 1px solid lightgray;
+    font-size: 1.6rem;
 }
 
-body {
-    /* background: url(./wood-background.jpeg); */
-    background: #B5C689;
+.credits {
+    background: #3C6478;
+    border-radius:0 0  10px 10px;
+    margin: 0;
+    padding: 0 61px;
+    color: white;
+    text-shadow: 0 0 5px black;
+    border: 1px solid lightgray;
+    font-size: 0.8rem;
 }

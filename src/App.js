@@ -49,7 +49,8 @@ class App extends React.Component {
       dateCompleted.appendChild(document.createTextNode(`Completed ${Date(Date.now()).slice(0,21)} `));
       dateCompleted.classList.add(`date-completed`)
       dateCompleted.classList.add(`completion-${index}`)
-      e.target.appendChild(dateCompleted);
+      // e.target.appendChild(dateCompleted);
+      Array.from(document.querySelectorAll('.item-container'))[`${index}`].appendChild(dateCompleted);
       this.setState(prevState => {
         const newItems = [...prevState.todoStorage];
         newItems[index].completed = true;
@@ -70,7 +71,8 @@ class App extends React.Component {
 
   clearCompleted = () => {
     Array.from(document.querySelectorAll('.todo-item')).map(item => item.style.textDecoration = 'none');
-    Array.from(document.querySelectorAll('.todo-item')).map(item => item.style.color = 'white');
+    Array.from(document.querySelectorAll('.todo-item')).map(item => item.style.color = 'black');
+    document.querySelector('.date-completed').remove(document.querySelector('.date-completed').selectedIndex)
     this.setState(prevState => {
       const newItems = [...prevState.todoStorage];
       return {todoStorage: newItems.filter(item => item.completed !== true)};
@@ -80,7 +82,7 @@ class App extends React.Component {
   render() {
     return (
       <div className="todo-container">
-        <h2>React-Todo: MVP</h2>
+        <h2>React-Todo: Stretch!</h2>
         <TodoForm 
           onSubmit={this.handleSubmit} 
           task={this.state.task}
@@ -93,6 +95,9 @@ class App extends React.Component {
             toggleCompleted={this.handleCompletion} 
             index={index}/>
           ))}
+        </div>
+        <div className='credits'>
+          <h3>Designed by Guillermo Arria-Devoe</h3>
         </div>
       </div>
     );
