@@ -96,7 +96,7 @@ class App extends React.Component {
           ))}
         </div>
         <div className='credits'>
-          <h3>Designed by Guillermo Arria-Devoe</h3>
+          <h3>*Designed by Guillermo Arria-Devoe*</h3>
         </div>
       </div>
     );
