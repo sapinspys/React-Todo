@@ -1,0 +1,36 @@
+body {
+    /* background: url(./wood-background.jpeg); */
+    background: #107896;
+}
+
+.todo-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 500px;
+    margin: 0 auto;
+    margin-top: 80px;
+}
+
+.todo-container h2 {
+    background: #3C6478;
+    border-radius: 10px 10px 0 0;
+    margin: 0;
+    padding: 10px 63px;
+    color: white;
+    text-shadow: 0 0 5px black;
+    border: 0.5px solid lightgray;
+    font-size: 1.6rem;
+}
+
+.credits {
+    background: #3C6478;
+    border-radius:0 0  10px 10px;
+    margin: 0;
+    padding: 0 54px;
+    color: white;
+    text-shadow: 0 0 5px black;
+    border: 0.5px solid lightgray;
+    font-size: 0.8rem;
+}

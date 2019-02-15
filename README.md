@@ -51,6 +51,8 @@
   - Your input field should take in user input, and allow a user to press `Enter` or click on the `Submit Button` to add a todo to your list.
   - Once a todo is submitted, the Todo List should re-render and show the added todo.
 
+DONE!
+
 #### Day 2 Challenges
 
 - Add the functionality to toggle your todo's completed flag from `false` to `true`.
