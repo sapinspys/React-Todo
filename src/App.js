@@ -39,7 +39,6 @@ class App extends React.Component {
   }
 
   handleCompletion = e => {
-    console.log(e.target)
     let index = e.target.getAttribute('data-index');
     let currentFlag = this.state.todoStorage[index].completed;
     if (currentFlag === false) {

@@ -4,7 +4,7 @@ import './Todo.css';
 const TodoForm = props => {
     return (
         <div className='form-container'>
-            <form onSubmit={props.onSubmit}>
+            <form onSubmit={props.onSubmit} autoComplete='off'>
                 <input type="text"
                     name="task"
                     value={props.task}
