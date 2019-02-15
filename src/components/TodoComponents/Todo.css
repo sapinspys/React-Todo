@@ -22,7 +22,7 @@
 
 .item-container {
     background:white;
-    border: 1px solid lightgray;
+    border: 0.5px solid lightgray;
     border-collapse: separate;
     width: 354px;
     padding-bottom: 15px;

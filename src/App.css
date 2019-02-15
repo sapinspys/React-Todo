@@ -17,10 +17,10 @@ body {
     background: #3C6478;
     border-radius: 10px 10px 0 0;
     margin: 0;
-    padding: 10px 77px;
+    padding: 10px 63px;
     color: white;
     text-shadow: 0 0 5px black;
-    border: 1px solid lightgray;
+    border: 0.5px solid lightgray;
     font-size: 1.6rem;
 }
 
@@ -31,6 +31,6 @@ body {
     padding: 0 61px;
     color: white;
     text-shadow: 0 0 5px black;
-    border: 1px solid lightgray;
+    border: 0.5px solid lightgray;
     font-size: 0.8rem;
 }
