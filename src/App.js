@@ -8,9 +8,9 @@ class App extends React.Component {
     super(props);
     this.state = {
       todoStorage: [],
-      task: '',
-      id: '',
-      completed: false,
+      // task: '',
+      // id: '',
+      // completed: false,
     }
   }
 
@@ -25,9 +25,9 @@ class App extends React.Component {
     this.setState((state) => {
       return({
         todoStorage: [...state.todoStorage, newTask], 
-        task: '',
-        id: '',
-        completed: false,
+        // task: '',
+        // id: '',
+        // completed: false,
       })
     })
   }
