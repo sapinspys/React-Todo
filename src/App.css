@@ -35,6 +35,7 @@ body {
 
 .credits:hover {
     color:gainsboro;
+    text-shadow: 0 0 5px black;
 }
 
 .todo-list {
