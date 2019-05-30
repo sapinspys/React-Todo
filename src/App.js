@@ -8,28 +8,28 @@ class App extends React.Component {
     super(props);
     this.state = {
       todoStorage: [],
-      // task: '',
-      // id: '',
-      // completed: false,
+      task: '',
     }
   }
 
   handleSubmit = e => {
     e.preventDefault();
-    const newTask = {
-      task: this.state.task,
-      id: Date.now(),
-      completed: false,
-    }
-
-    this.setState((state) => {
-      return({
-        todoStorage: [...state.todoStorage, newTask], 
-        // task: '',
-        // id: '',
-        // completed: false,
+    if (this.state.task) {
+      const newTask = {
+        task: this.state.task,
+        id: Date.now(),
+        completed: false,
+      }
+  
+      this.setState((state) => {
+        return({
+          todoStorage: [...state.todoStorage, newTask], 
+          task: '',
+        })
       })
-    })
+    } else {
+      alert("Todo item required")
+    } 
   }
 
   handleChange = e => {
