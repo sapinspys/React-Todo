@@ -69,9 +69,9 @@ class App extends React.Component {
   }
 
   clearCompleted = () => {
-    Array.from(document.querySelectorAll('.todo-item')).map(item => item.style.textDecoration = 'none');
-    Array.from(document.querySelectorAll('.todo-item')).map(item => item.style.color = 'black');
-    document.querySelector('.date-completed').remove(document.querySelector('.date-completed').selectedIndex)
+    // Array.from(document.querySelectorAll('.todo-item')).map(item => item.style.textDecoration = 'none');
+    // Array.from(document.querySelectorAll('.todo-item')).map(item => item.style.color = 'black');
+    // document.querySelector('.date-completed').remove(document.querySelector('.date-completed').selectedIndex)
     this.setState(prevState => {
       const newItems = [...prevState.todoStorage];
       return {todoStorage: newItems.filter(item => item.completed !== true)};
