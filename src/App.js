@@ -80,7 +80,7 @@ class App extends React.Component {
   render() {
     return (
       <div className="todo-container">
-        <h2>React-Todo: Stretch!</h2>
+        <h2>Reactive Todo</h2>
         <TodoForm 
           onSubmit={this.handleSubmit} 
           task={this.state.task}
@@ -94,9 +94,7 @@ class App extends React.Component {
             index={index}/>
           ))}
         </div>
-        <div className='credits'>
-          <h3>*Designed by Guillermo Arria-Devoe*</h3>
-        </div>
+        <a className="credits" href="https://github.com/sapinspys/React-Todo">GitHub Repository</a>
       </div>
     );
   }
