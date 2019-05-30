@@ -28,3 +28,11 @@
     padding-bottom: 15px;
     padding-top: 15px;
 }
+
+.todo-item__completed {
+    padding-left: 20px;
+    color: gray;
+    text-decoration: line-through;
+    font-size: 1.4rem;
+    margin: 0;
+}

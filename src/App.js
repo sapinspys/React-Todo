@@ -41,25 +41,25 @@ class App extends React.Component {
   handleCompletion = e => {
     let index = e.target.getAttribute('data-index');
     let currentFlag = this.state.todoStorage[index].completed;
-    if (currentFlag === false) {
-      e.target.style.textDecoration = 'line-through';
-      e.target.style.color = 'lightgray';
-      let dateCompleted = document.createElement('p');
-      dateCompleted.appendChild(document.createTextNode(`Completed ${Date(Date.now()).slice(0,21)} `));
-      dateCompleted.classList.add(`date-completed`)
-      dateCompleted.classList.add(`completion-${index}`)
-      // e.target.appendChild(dateCompleted);
-      Array.from(document.querySelectorAll('.item-container'))[`${index}`].appendChild(dateCompleted);
+    if (!currentFlag) {
+      // e.target.style.textDecoration = 'line-through';
+      // e.target.style.color = 'lightgray';
+      // let dateCompleted = document.createElement('p');
+      // dateCompleted.appendChild(document.createTextNode(`Completed ${Date(Date.now()).slice(0,21)} `));
+      // dateCompleted.classList.add(`date-completed`)
+      // dateCompleted.classList.add(`completion-${index}`)
+      // // e.target.appendChild(dateCompleted);
+      // Array.from(document.querySelectorAll('.item-container'))[`${index}`].appendChild(dateCompleted);
       this.setState(prevState => {
         const newItems = [...prevState.todoStorage];
         newItems[index].completed = true;
-        return {items: newItems};
+        return {todoStorage: newItems};
       })
     } else {
-      e.target.style.textDecoration = 'none';
-      e.target.style.color = 'black';
-      let completionDate = document.querySelector(`.completion-${index}`);
-      completionDate.parentNode.removeChild(completionDate);
+      // e.target.style.textDecoration = 'none';
+      // e.target.style.color = 'black';
+      // let completionDate = document.querySelector(`.completion-${index}`);
+      // completionDate.parentNode.removeChild(completionDate);
       this.setState(prevState => {
         const newItems = [...prevState.todoStorage];
         newItems[index].completed = false;
@@ -73,8 +73,7 @@ class App extends React.Component {
     // Array.from(document.querySelectorAll('.todo-item')).map(item => item.style.color = 'black');
     // document.querySelector('.date-completed').remove(document.querySelector('.date-completed').selectedIndex)
     this.setState(prevState => {
-      const newItems = [...prevState.todoStorage];
-      return {todoStorage: newItems.filter(item => item.completed !== true)};
+      return {todoStorage: [...prevState.todoStorage].filter(item => item.completed !== true)};
     })     
   } 
 
