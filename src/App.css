@@ -8,7 +8,7 @@ body {
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    width: 500px;
+    max-width: 400px;
     margin: 0 auto;
     margin-top: 80px;
     border: 10px solid green;

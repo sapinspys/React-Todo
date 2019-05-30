@@ -2,7 +2,19 @@
     display: flex;
     flex-wrap: wrap;
     border: 0.5px solid lightgray;
+    width: 100%;
 }
+
+.form-container input {
+    width: 50%;
+    box-sizing: border-box;
+}
+
+.form-container button {
+    width: 25%;
+    box-sizing: border-box;
+}
+
 
 .date-completed {
     text-decoration: none;
